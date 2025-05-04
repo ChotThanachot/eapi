@@ -1,0 +1,7 @@
+plugin: echo
+dir: .
+output: docs
+
+generators:
+  - name: axios
+    output: ./frontend

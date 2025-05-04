@@ -1,0 +1,53 @@
+plugin: gin
+dir: '.'
+output: docs # output directory of openapi.json
+
+openapi:
+  openapi: '3.1.0'
+  info:
+    title: This is an Example
+    description: Example description for Example
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: "https://example.org/api/oauth/dialog"
+          scopes:
+            "goods:write": "modify pets in your account"
+            "read:pets": "read your pets"
+
+depends:
+  - github.com/gin-gonic/gin
+  - encoding/json
+  - database/sql
+  - gorm.io/gorm
+
+properties:
+  request:
+    - type: '*server/pkg/handler.CustomContext'
+      method: 'Bind'
+      return:
+        data:
+          type: 'args[0]'
+  response:
+    - type: '*server/pkg/handler.CustomContext'
+      method: 'JSONOK'
+      return:
+        contentType: 'application/json'
+        data:
+          type: 'object'
+          properties:
+            code:
+              type: 'number'
+            msg:
+              type: 'string'
+            data:
+              type: 'args[0]'
+        status: 200
+
+generators:
+#  - name: ts # generator name
+#    output: ./frontend/src/types # output directory
+  - file: ./plugin/custom-generator.js # for custom generator
+    output: ./frontend/ # output directory

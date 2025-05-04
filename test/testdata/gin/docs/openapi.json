@@ -1,0 +1,736 @@
+{
+    "components": {
+        "schemas": {
+            "CustomResponseType": {
+                "ext": {
+                    "type": "object",
+                    "typeParams": [
+                        {
+                            "index": 0,
+                            "name": "A",
+                            "constraint": "any"
+                        }
+                    ]
+                },
+                "properties": {
+                    "code": {
+                        "type": "number"
+                    },
+                    "data": {
+                        "ext": {
+                            "type": "param",
+                            "typeParam": {
+                                "index": 0,
+                                "name": "A",
+                                "constraint": "any"
+                            }
+                        },
+                        "type": "typeParam"
+                    },
+                    "msg": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "data",
+                    "msg"
+                ],
+                "title": "CustomResponseType",
+                "type": "object"
+            },
+            "CustomResponseType[20c6dc665200]": {
+                "ext": {
+                    "type": "specific",
+                    "specificType": {
+                        "args": [
+                            {
+                                "additionalProperties": {
+                                    "description": "Any Type",
+                                    "ext": {
+                                        "type": "any"
+                                    },
+                                    "type": "object"
+                                },
+                                "ext": {
+                                    "type": "map",
+                                    "mapKey": {
+                                        "type": "string"
+                                    },
+                                    "mapValue": {
+                                        "description": "Any Type",
+                                        "ext": {
+                                            "type": "any"
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        ],
+                        "type": {
+                            "$ref": "#/components/schemas/CustomResponseType"
+                        }
+                    }
+                },
+                "properties": {
+                    "code": {
+                        "type": "number"
+                    },
+                    "data": {
+                        "additionalProperties": {
+                            "description": "Any Type",
+                            "ext": {
+                                "type": "any"
+                            },
+                            "type": "object"
+                        },
+                        "ext": {
+                            "type": "map",
+                            "mapKey": {
+                                "type": "string"
+                            },
+                            "mapValue": {
+                                "description": "Any Type",
+                                "ext": {
+                                    "type": "any"
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "msg": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "data",
+                    "msg"
+                ],
+                "title": "CustomResponseType",
+                "type": "object"
+            },
+            "CustomResponseType[server_pkg_view.GoodsCreateRes]": {
+                "ext": {
+                    "type": "specific",
+                    "specificType": {
+                        "args": [
+                            {
+                                "$ref": "#/components/schemas/server_pkg_view.GoodsCreateRes"
+                            }
+                        ],
+                        "type": {
+                            "$ref": "#/components/schemas/CustomResponseType"
+                        }
+                    }
+                },
+                "properties": {
+                    "code": {
+                        "type": "number"
+                    },
+                    "data": {
+                        "$ref": "#/components/schemas/server_pkg_view.GoodsCreateRes"
+                    },
+                    "msg": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "code",
+                    "data",
+                    "msg"
+                ],
+                "title": "CustomResponseType",
+                "type": "object"
+            },
+            "ShopGoodsDownRequest": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "dateRange": {
+                        "description": "日期范围",
+                        "ext": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "items": {
+                            "type": "string"
+                        },
+                        "title": "dateRange",
+                        "type": "array"
+                    },
+                    "defaultPostForm": {
+                        "description": "Default Post Form",
+                        "title": "defaultPostForm",
+                        "type": "string"
+                    },
+                    "operatorUid": {
+                        "description": "操作人 UID",
+                        "title": "operatorUid",
+                        "type": "string"
+                    }
+                },
+                "title": "ShopGoodsDownRequest",
+                "type": "object"
+            },
+            "github.com_gin-gonic_gin.Param": {
+                "description": "Param is a single URL parameter, consisting of a key and a value.",
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "Key": {
+                        "type": "string"
+                    },
+                    "Value": {
+                        "type": "string"
+                    }
+                },
+                "title": "GinParam",
+                "type": "object"
+            },
+            "github.com_gin-gonic_gin.Params": {
+                "description": "Params is a Param-slice, as returned by the router.\n\nThe slice is ordered, the first URL parameter is also the first slice value.\n\nIt is therefore safe to read values by the index.",
+                "ext": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/components/schemas/github.com_gin-gonic_gin.Param"
+                    }
+                },
+                "items": {
+                    "$ref": "#/components/schemas/github.com_gin-gonic_gin.Param"
+                },
+                "title": "GinParams",
+                "type": "array"
+            },
+            "gorm.io_gorm.DeletedAt": {
+                "format": "date-time",
+                "title": "GormDeletedAt",
+                "type": "string"
+            },
+            "server_pkg_shop.GoodsInfoPathParams": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "guid": {
+                        "description": "Goods Guid",
+                        "type": "integer"
+                    }
+                },
+                "title": "ShopGoodsInfoPathParams",
+                "type": "object"
+            },
+            "server_pkg_view.ErrCode": {
+                "description": "\u003ctable\u003e\u003ctr\u003e\u003cth\u003eValue\u003c/th\u003e\u003cth\u003eKey\u003c/th\u003e\u003cth\u003eDescription\u003c/th\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eCodeNotFound\u003c/td\u003e\u003ctd\u003eResource not found\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eCodeCancled\u003c/td\u003e\u003ctd\u003eRequest canceld\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eCodeUnknown\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e\u003c/td\u003e\u003ctd\u003eCodeInvalidArgument\u003c/td\u003e\u003ctd\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e",
+                "enum": [
+                    10000,
+                    10001,
+                    10002,
+                    10003
+                ],
+                "ext": {
+                    "type": "enum",
+                    "enumItems": [
+                        {
+                            "key": "CodeNotFound",
+                            "value": 10000,
+                            "description": "Resource not found"
+                        },
+                        {
+                            "key": "CodeCancled",
+                            "value": 10001,
+                            "description": "Request canceld"
+                        },
+                        {
+                            "key": "CodeUnknown",
+                            "value": 10002,
+                            "description": ""
+                        },
+                        {
+                            "key": "CodeInvalidArgument",
+                            "value": 10003,
+                            "description": ""
+                        }
+                    ]
+                },
+                "title": "ViewErrCode",
+                "type": "integer"
+            },
+            "server_pkg_view.Error": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "code": {
+                        "$ref": "#/components/schemas/server_pkg_view.ErrCode"
+                    },
+                    "msg": {
+                        "type": "string"
+                    }
+                },
+                "title": "ViewError",
+                "type": "object"
+            },
+            "server_pkg_view.GoodsCreateReq": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "cover": {
+                        "description": "封面图",
+                        "type": "string"
+                    },
+                    "images": {
+                        "description": "详情图",
+                        "ext": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/components/schemas/server_pkg_view.Image"
+                            }
+                        },
+                        "items": {
+                            "$ref": "#/components/schemas/server_pkg_view.Image"
+                        },
+                        "type": "array"
+                    },
+                    "price": {
+                        "description": "价格(分)",
+                        "type": "integer"
+                    },
+                    "subTitle": {
+                        "description": "商品描述",
+                        "type": "string"
+                    },
+                    "title": {
+                        "description": "商品标题",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "title",
+                    "price"
+                ],
+                "title": "ViewGoodsCreateReq",
+                "type": "object"
+            },
+            "server_pkg_view.GoodsCreateRes": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "Status": {
+                        "description": "测试引用第三方包",
+                        "$ref": "#/components/schemas/github.com_gin-gonic_gin.Params"
+                    },
+                    "guid": {
+                        "description": "商品 GUID",
+                        "type": "string"
+                    },
+                    "raw": {
+                        "deprecated": true,
+                        "description": "测试引用内置包类型",
+                        "ext": {
+                            "type": "any"
+                        },
+                        "type": "object"
+                    },
+                    "selfRef": {
+                        "description": "测试循环引用",
+                        "$ref": "#/components/schemas/server_pkg_view.SelfRefType"
+                    },
+                    "stringAlias": {
+                        "description": "测试类型别名",
+                        "type": "string"
+                    }
+                },
+                "title": "ViewGoodsCreateRes",
+                "type": "object"
+            },
+            "server_pkg_view.GoodsDownRes": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "Status": {
+                        "type": "string"
+                    }
+                },
+                "title": "ViewGoodsDownRes",
+                "type": "object"
+            },
+            "server_pkg_view.GoodsInfoRes": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "cover": {
+                        "type": "string"
+                    },
+                    "deletedAt": {
+                        "$ref": "#/components/schemas/gorm.io_gorm.DeletedAt"
+                    },
+                    "mapInt": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/server_pkg_view.Property"
+                        },
+                        "ext": {
+                            "type": "map",
+                            "mapKey": {
+                                "type": "integer"
+                            },
+                            "mapValue": {
+                                "$ref": "#/components/schemas/server_pkg_view.Property"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "price": {
+                        "type": "integer"
+                    },
+                    "properties": {
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/server_pkg_view.Property"
+                        },
+                        "ext": {
+                            "type": "map",
+                            "mapKey": {
+                                "type": "string"
+                            },
+                            "mapValue": {
+                                "$ref": "#/components/schemas/server_pkg_view.Property"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "subTitle": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    }
+                },
+                "title": "ViewGoodsInfoRes",
+                "type": "object"
+            },
+            "server_pkg_view.Image": {
+                "description": "Image 商品图片",
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "url": {
+                        "description": "图片链接",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "url"
+                ],
+                "title": "ViewImage",
+                "type": "object"
+            },
+            "server_pkg_view.Property": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "title": {
+                        "type": "string"
+                    }
+                },
+                "title": "ViewProperty",
+                "type": "object"
+            },
+            "server_pkg_view.SelfRefType": {
+                "ext": {
+                    "type": "object"
+                },
+                "properties": {
+                    "data": {
+                        "type": "string"
+                    },
+                    "parent": {
+                        "$ref": "#/components/schemas/server_pkg_view.SelfRefType"
+                    }
+                },
+                "title": "ViewSelfRefType",
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "oauth2": {
+                "flows": {
+                    "implicit": {
+                        "authorizationUrl": "https://example.org/api/oauth/dialog",
+                        "scopes": {
+                            "goods:write": "modify pets in your account",
+                            "read:pets": "read your pets"
+                        }
+                    }
+                },
+                "type": "oauth2"
+            }
+        }
+    },
+    "info": {
+        "description": "Example description for Example",
+        "title": "This is an Example",
+        "version": ""
+    },
+    "openapi": "3.1.0",
+    "paths": {
+        "/api/controller/goods/{guid}": {
+            "delete": {
+                "operationId": "controller.Delete",
+                "parameters": [
+                    {
+                        "description": "Goods Guid",
+                        "in": "path",
+                        "name": "guid",
+                        "required": true,
+                        "schema": {
+                            "title": "guid",
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "tags": [
+                    "Shop"
+                ]
+            }
+        },
+        "/api/goods": {
+            "post": {
+                "description": "GoodsCreate 创建商品接口",
+                "operationId": "shop.GoodsCreate",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/server_pkg_view.GoodsCreateReq"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomResponseType[server_pkg_view.GoodsCreateRes]"
+                                }
+                            }
+                        },
+                        "description": "创建成功"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/server_pkg_view.Error"
+                                }
+                            }
+                        },
+                        "description": "参数无效"
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "goods:read",
+                            "goods:write"
+                        ]
+                    }
+                ],
+                "summary": "创建商品",
+                "tags": [
+                    "Goods"
+                ]
+            }
+        },
+        "/api/goods/{guid}": {
+            "delete": {
+                "description": "GoodsDelete 删除商品",
+                "operationId": "shop.GoodsDelete",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "formDataField",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {},
+                "security": [
+                    {
+                        "oauth2": [
+                            "goods:write"
+                        ]
+                    }
+                ],
+                "tags": [
+                    "Shop"
+                ]
+            }
+        },
+        "/api/goods/{guid}/down": {
+            "post": {
+                "description": "GoodsDown 下架商品",
+                "operationId": "shop.GoodsDown",
+                "parameters": [
+                    {
+                        "description": "商品 GUID",
+                        "in": "path",
+                        "name": "guid",
+                        "required": true,
+                        "schema": {
+                            "title": "guid",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Default Query",
+                        "in": "query",
+                        "name": "defaultQuery",
+                        "schema": {
+                            "default": "xxxx",
+                            "title": "defaultQuery",
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ShopGoodsDownRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/server_pkg_view.GoodsDownRes"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "goods:read",
+                            "goods:write"
+                        ]
+                    }
+                ],
+                "tags": [
+                    "Goods"
+                ]
+            }
+        },
+        "/api/v2/goods/{guid}": {
+            "get": {
+                "description": "GoodsInfo 商品详情",
+                "operationId": "shop.GoodsInfo",
+                "parameters": [
+                    {
+                        "description": "Goods Guid",
+                        "in": "path",
+                        "name": "guid",
+                        "required": true,
+                        "schema": {
+                            "description": "Goods Guid",
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/server_pkg_view.GoodsInfoRes"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "oauth2": [
+                            "goods:read"
+                        ]
+                    }
+                ],
+                "tags": [
+                    "Goods"
+                ]
+            }
+        },
+        "/wrapped-handler": {
+            "get": {
+                "description": "wrapped handler",
+                "operationId": "shop.WrappedHandler",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "hello",
+                        "schema": {
+                            "title": "hello",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "world",
+                        "schema": {
+                            "title": "world",
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CustomResponseType[20c6dc665200]"
+                                }
+                            }
+                        },
+                        "description": "自定义响应函数"
+                    },
+                    "400": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "description": "Any Json Type",
+                                    "ext": {
+                                        "type": "any"
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "Shop"
+                ]
+            }
+        }
+    }
+}

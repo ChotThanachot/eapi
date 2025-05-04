@@ -1,0 +1,12 @@
+logs
+
+.idea
+.vscode
+*.log
+*.swp
+*.swo
+
+bin/
+bak
+tmpls/dist
+node_modules/
